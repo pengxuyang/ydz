@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--网页页面字符集-->
+		<meta charset="UTF-8">
+		<!--针对移动设备,网站显示宽度等于设备屏幕显示宽度,内容缩放比例为1:1-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!--将下面的 <meta> 标签加入到页面中，可以让部分国产浏览器默认采用高速模式渲染页面：-->
+		<meta name="renderer" content="webkit">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>11注册个人账号</title>
+		<!-- css引入和样式定义区域 -->
+		<link rel="stylesheet" type="text/css" href="css/semantic.css">
+		<link rel="stylesheet" type="text/css" href="css/cola.css">
+		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+		<script type="text/javascript" src="js/3rd.js"></script>
+		<script type="text/javascript" src="js/semantic.js"></script>
+		<script type="text/javascript" src="js/cola.js"></script>
+		<script type="text/javascript" src="js/i18n/zh-Hans/cola.js"></script>
+		<!-- document 内部样式定义区域-->
+		<style>
+			.login_input{
+				margin-bottom:2rem !important;
+			}
+			
+			@media only screen and (max-width: 48.0625em ){
+				.small-hide {
+    				display: none;
+  				}
+			}
+			
+			
+		</style>
+	</head>
+
+	<body>
+		<!--头部 s-->
+		<header>
+			<div style="background: #1B1C1D;padding: 0px 4rem;">
+				<div c-widget="menu;class:inverted borderless container" style="border-radius: 0rem;height: 4rem;">
+					<a c-widget="item;caption:易对账" class="header" style=padding-right: 0px;"></a>
+					<a c-widget="item;caption:服务热线@186-2161-9311" style="color: #9d9d9d;font-size: 16px"></a>
+					<div class="right menu">
+						<a c-widget="item; caption:登陆"></a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--头部 e-->
+		<div c-widget="segment; class:tertiary;" style="margin:3rem auto;width: 80%;">欢迎您注册易对账！请您务必严肃填写和选择，我们会有审核。没有真实需求的朋友请绕道！1000个人喜欢我，不如100个人爱上我！</div>
+			
+		<!---->
+		<!--<div  class="h-box" style="margin:4rem auto;width: 80%;">-->
+		<div class="row" style="width: 80%;">
+			<!--左边图片部分 s-->
+			<div class="small-hide medium-7 large-7 columns">
+				<div style="text-align: center;font-size: 1.1rem;color: rgba(0,0,0,0.7);    margin-bottom: 2em;">古人有云：好记性不如烂笔头！    易对账曰：人算不如天算，天算就是云计算！</div>
+		
+				<img src="img/u29.png" width="100%"/>
+			</div>
+			<!--左边图片部分 e-->
+			<div class="small-hide medium-1 large-1 columns">
+				
+			</div>
+			<!--右边注册部分 s-->
+			<div class="small-12 medium-4 large-4 columns" style="    padding-top: 3.45em;">
+				<div class="ui form">
+					<div class="field login_input">
+						<div c-widget="segment;"style="border-bottom: 2px solid #2185d0;">免费试用15天！接收好友供应商订单功能终身免费！</div>
+					</div>
+					<div class="field login_input">
+						<div c-widget="Input;placeholder:输入手机号码（以后登录系统的唯一识别号）"></div>
+					</div>
+					<div class="fields login_input">
+						<div class="field ten wide">
+							<div c-widget="Input;placeholder:输入短信验证码"></div>
+						</div>
+						<div class="field six wide" >
+							<div c-widget="button; class:blue">获取验证码</div>
+						</div>
+					</div>
+					<div class="field login_input">
+						<div c-widget="Input;placeholder: 输入真实姓名（用于严肃业务对账识别）"></div>
+					</div>
+					<div class="field login_input">
+						<div c-widget="Input;placeholder:输入密码（6-20位，必须含字母+数字，区分大小写）"></div>
+					</div>
+					<div class="field login_input">
+						<input type="checkbox" style="margin: 3px 5px 0 0;"/>同意<span style="color: #2185d0;    font-size: 0.8em;">《个人用户服务协议》 与 《个人用户隐私保护协议》</span>
+					</div>
+					<div class="field login_input">
+						<div c-widget="button; class:blue" style="width: 99%;">提交</div>						
+					</div>
+				</div>	
+			</div>
+			<!--右边注册部分 e-->
+		</div>
+		<footer style="margin-top: 3em;">
+			<div c-widget="segment; class:secondary;" style="text-align: center;">
+				<div style="width: 80%;">@2016 上海仁石科技有限公司 / All Rights Reserved   沪 ICP备16005067 <span style="float: right; margin-left: 2rem;">关于我们   帮助中心  加入我们</span></div>
+			</div>
+		</footer>
+		<script type="text/javascript">
+			cola(function(model) {
+			});
+		</script>
+	</body>
+
+</html>

@@ -79,7 +79,6 @@
 		<div style="margin:4rem auto 2rem;width: 80%;">
 			<span class="select_co" style="">创建新企业</span>
 			<span class="unselect_co" style="display: inline-block;width: 22rem;height: 3rem;line-height: 3rem;text-align: center;">加入已创建的企业</span>
-
 		</div>
 		<div style="margin:0rem auto;width: 80%;">
 			每个企业只需创建一次，创建成功后，您将成为管理员。建议由公司老板或合伙人来创建公司。管理员权限可以被转让。
@@ -89,14 +88,47 @@
 		<div class="row" style="width: 80%;margin-top: 2rem;">
 			<div class="ui form">
 				<div class="fields">
-					<div class="field two wide">
-						<span style="line-height: 2.5rem;">联系电话<span style="color: red;font: bolder;">*</span></span>	
+					<div style="min-width: 90px;">
+						<span style="line-height: 2.5rem;">企业全称<span style="color: red;font-size: 18px;vertical-align: top;">*</span></span>
 					</div>
 					<div class="field nine wide">
 						<div c-widget="Input;placeholder:填写营业执照上的公司全称（在未来进行在线支付设置时要用到企业实名认证）"></div>
 					</div>
 				</div>
-				<div c-widget="button; caption:提交"></div>
+				<div class="fields">
+					<div style="min-width: 90px;">
+						<span style="line-height: 2.5rem;">企业简称<span style="color: red;font-size: 18px;vertical-align: top;">*</span></span>
+					</div>
+					<div class="field nine wide">
+						<div c-widget="Input;placeholder:请填写对外的公司简称 （3-6个字为宜，如：易对账/易对账科技）"></div>
+					</div>
+				</div>
+				<div class="fields">
+					<div style="min-width: 90px;">
+						<span style="line-height: 2.5rem;">企业区域</span>
+					</div>
+					<div class="field nine wide">
+						<div id="province" class="field five wide"></div><div id="city" class="field five wide"></div><div id="county" class="field six wide"></div>
+					</div>
+				</div>
+				<div class="fields">
+					<div style="min-width: 90px;">
+						<span style="line-height: 2.5rem;">
+推荐人名
+</span>
+					</div>
+					<div class="field nine wide">
+						<div  class="field six wide">
+							<div c-widget="Input;placeholder:填写营业执照上的公司全称（在未来进行在线支付设置时要用到企业实名认证）"></div>
+						</div>
+						<div  class="field four wide">
+							<div c-widget="Input;placeholder:填写营业执照上的公司全称（在未来进行在线支付设置时要用到企业实名认证）"></div>
+						</div>
+						<div  class="field six wide"></div>
+						
+					</div>
+				</div>
+				<div c-widget="button; class:blue" style="width: 20%;">提交</div>
 			</div>
 		</div>
 		<footer style="margin-top: 3em;">
@@ -105,7 +137,53 @@
 			</div>
 		</footer>
 		<script type="text/javascript">
-			cola(function(model) {});
+			cola(function(model) {
+				model.widgetConfig({
+					province: {
+						$type: "select",
+						options: [{
+							value: null,
+							text: "省"
+						}, {
+							value: "m",
+							text: "Male"
+						}, {
+							value: "f",
+							text: "Female"
+						}]
+					}
+				});
+				model.widgetConfig({
+					city: {
+						$type: "select",
+						options: [{
+							value: null,
+							text: "市"
+						}, {
+							value: "m",
+							text: "Male"
+						}, {
+							value: "f",
+							text: "Female"
+						}]
+					}
+				});
+				model.widgetConfig({
+					county: {
+						$type: "select",
+						options: [{
+							value: null,
+							text: "县"
+						}, {
+							value: "m",
+							text: "Male"
+						}, {
+							value: "f",
+							text: "Female"
+						}]
+					}
+				});
+			});
 		</script>
 	</body>
 

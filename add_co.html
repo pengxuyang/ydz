@@ -77,15 +77,15 @@
 		<div c-widget="segment; class:tertiary;" style="margin:3rem auto;width: 80%;">请选择 创建一家新企业 或 加入一家已创建的企业</div>
 
 		<div style="margin:4rem auto 2rem;width: 80%;">
-			<span class="select_co" style="">创建新企业</span>
-			<span class="unselect_co" style="display: inline-block;width: 22rem;height: 3rem;line-height: 3rem;text-align: center;">加入已创建的企业</span>
+			<span class="select_co" onclick="change_new(this)" style="">创建新企业</span><span onclick="change_add(this)" class="unselect_co" style="display: inline-block;width: 22rem;height: 3rem;line-height: 3rem;text-align: center;">加入已创建的企业</span>
 		</div>
 		<div style="margin:0rem auto;width: 80%;">
 			每个企业只需创建一次，创建成功后，您将成为管理员。建议由公司老板或合伙人来创建公司。管理员权限可以被转让。
 		</div>
 
 		<!--<div  class="h-box" style="margin:4rem auto;width: 80%;">-->
-		<div class="row" style="width: 80%;margin-top: 2rem;">
+		<!--创建公司 start-->
+		<div class="row" id="create" style="width: 80%;margin-top: 2rem;">
 			<div class="ui form">
 				<div class="fields">
 					<div style="min-width: 90px;">
@@ -114,8 +114,8 @@
 				<div class="fields">
 					<div style="min-width: 90px;">
 						<span style="line-height: 2.5rem;">
-推荐人名
-</span>
+							推荐人名
+						</span>
 					</div>
 					<div class="field nine wide">
 						<div  class="field six wide">
@@ -131,12 +131,57 @@
 				<div c-widget="button; class:blue" style="width: 20%;">提交</div>
 			</div>
 		</div>
+		<!--创建公司 end-->
+		<!--加入公司 start--->
+		<div class="row" id="add" style="width: 80%;margin-top: 2rem;display: none;">
+			<div class="ui form">
+				<div class="fields">
+					<div style="min-width: 90px;">
+						<span style="line-height: 2.5rem;">邀请码<span style="color: red;font-size: 18px;vertical-align: top;">*</span></span>
+					</div>
+					<div class="field nine wide">
+						<div c-widget="Input;placeholder:请输入你要加入的企业的6位数字字母组合的企业代码（询问企业账户管理员）"></div>
+					</div>
+				</div>
+				<div class="fields">
+					<div style="min-width: 90px;">
+						<span style="line-height: 2.5rem;">企业代码<span style="color: red;font-size: 18px;vertical-align: top;">*</span></span>
+					</div>
+					<div class="field nine wide">
+						<div c-widget="Input;placeholder:请输入你要加入的企业的6位数字字母组合的企业代码（询问企业账户管理员）"></div>
+					</div>
+				</div>
+				<div class="fields">
+					<div style="min-width: 90px;">
+						<span style="line-height: 2.5rem;">真实姓名</span>
+					</div>
+					<div class="field nine wide">
+						<div c-widget="Input;"></div>
+					</div>
+				</div>
+				<div c-widget="button; class:blue" style="width: 20%;">提交</div>
+			</div>
+		</div>
+		<!--加入公司 end--->
 		<footer style="margin-top: 3em;">
 			<div c-widget="segment; class:secondary;" style="text-align: center;">
 				<div style="width: 80%;">@2016 上海仁石科技有限公司 / All Rights Reserved 沪 ICP备16005067 <span style="float: right; margin-left: 2rem;">关于我们   帮助中心  加入我们</span></div>
 			</div>
 		</footer>
 		<script type="text/javascript">
+			function change_new(d){
+				$(".select_co").removeClass("select_co").addClass("unselect_co");
+				$(d).addClass("select_co").removeClass("unselect_co");
+				$("#create").show();
+				$("#add").hide();
+			}
+			function change_add(d){
+				$(".select_co").removeClass("select_co").addClass("unselect_co");
+				$(d).addClass("select_co").removeClass("unselect_co");
+				$("#create").hide();
+				$("#add").show();
+			}
+		
 			cola(function(model) {
 				model.widgetConfig({
 					province: {

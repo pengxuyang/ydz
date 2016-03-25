@@ -19,7 +19,11 @@
 		<script type="text/javascript" src="js/cola.js"></script>
 		<script type="text/javascript" src="js/i18n/zh-Hans/cola.js"></script>
 		<!-- document 内部样式定义区域-->
-		
+		<style>
+			li {
+				margin: 1rem auto;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -36,37 +40,96 @@
 			</div>
 		</header>
 		<!--头部 e-->
-		<div c-widget="segment; class:tertiary;" style="margin:3rem auto;width: 80%;">  请仔细选择相应的大行业，我们会提供更加行业化和个性化的与服务！</div>
-		
+		<div c-widget="segment; class:tertiary;" style="margin:3rem auto;width: 80%;"> 请仔细选择相应的大行业，我们会提供更加行业化和个性化的与服务！</div>
+
 		<div style="width: 80%;margin: 1rem auto;">
 			<div>
 				<!--第一行 start-->
-				<div>
-					<img src="img/u2.png"/>
-					<div style="float: left; margin-left: 1rem;">
-						<div style="display: inline-block;background-color:#0099CC ;color: white;">泛广告印刷行业</div>
-						<div style="display: inline-block;background-color:#18BC9C ;color: white;">（包括但不限于广告、传媒、印刷、包装、字牌雕刻等行业上下游从事设计/制作/产品销售/制造/租赁等服务的企业）</div>
+				<div class="row">
+					<div class="medium-1 columns" style="line-height: 3.5rem;">
+						<img src="img/u2.png" style="width: 2rem;height: 2rem;" />
+					</div>
+					<div class="medium-11 columns" style="">
+						<div class="row">
+							<div class="medium-2 column" style="background-color:#0099CC ;color: white;height: 3rem;line-height: 3rem;text-align: center;">泛广告印刷行业</div>
+							<div class="medium-10 column" style="background-color:#18BC9C ;color: white;height: 3rem;line-height: 3rem;">（包括但不限于广告、传媒、印刷、包装、字牌雕刻等行业上下游从事设计/制作/产品销售/制造/租赁等服务的企业）</div>
+						</div>
 					</div>
 				</div>
 				<!--第一行 end-->
+				<!--列表模块 start-->
+				<div class="row">
+					<div class="medium-1 columns"></div>
+					<div class="medium-11 columns">
+						<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
+							<li>广告设计</li>
+							<li>媒体代理</li>
+							<li>喷绘写真</li>
+							<li>字牌雕刻</li>
+							<li>条幅制作</li>
+							<li>婚庆公司</li>
+							<li>印刷厂</li>
+							<li>包装厂</li>
+							<li>CTP输出</li>
+							<li>后道加工</li>
+							<li>器材租赁</li>
+							<li>会展公司</li>
+							<li>广告耗材经销</li>
+							<li>印刷耗材经销</li>
+							<li>广印设备经销</li>
+						</ul>
+					</div>
+				</div>
+				<!--列表模块 end-->
+			</div>
+
+			<div>
+				<!--第一行 start-->
+				<div class="row">
+					<div class="medium-1 columns" style="line-height: 3.5rem;">
+						<img src="img/u48.png" style="width: 2rem;height: 2rem;" />
+					</div>
+					<div class="medium-11 columns" style="">
+						<div class="row">
+							<div class="medium-2 column" style="background-color:#0099CC ;color: white;height: 3rem;line-height: 3rem;text-align: center;">其它行业</div>
+							<div class="medium-10 column" style="background-color:#18BC9C ;color: white;height: 3rem;line-height: 3rem;">（非广告印刷相关行业）</div>
+						</div>
+					</div>
+				</div>
+				<!--第一行 end-->
+				<!--列表模块 start-->
+				<div class="row">
+					<div class="medium-1 columns"></div>
+					<div class="medium-11 columns">
+						<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
+							<li>数码3C类</li>
+							<li>家用电器</li>
+							<li>五金建材</li>
+							<li>文体用品</li>
+							<li>汽修汽配</li>
+							<li>母婴用品</li>
+							<li>家居装饰</li>
+							<li>电子电气</li>
+							<li>其它</li>
+						</ul>
+					</div>
+				</div>
+				<!--列表模块 end-->
+
 			</div>
 		</div>
-		
+
 		<div style="width: 80%;margin: 1rem auto;">
-					<div c-widget="button; class:blue" style="width: 20%;">提交</div>
+			<div c-widget="button; class:blue" style="width: 20%;">提交</div>
 		</div>
 
-		
 		<footer style="margin-top: 3em;">
 			<div c-widget="segment; class:secondary;" style="text-align: center;">
 				<div style="width: 80%;">@2016 上海仁石科技有限公司 / All Rights Reserved 沪 ICP备16005067 <span style="float: right; margin-left: 2rem;">关于我们   帮助中心  加入我们</span></div>
 			</div>
 		</footer>
 		<script type="text/javascript">
-		
-			cola(function(model) {
-	
-			});
+			cola(function(model) {});
 		</script>
 	</body>
 

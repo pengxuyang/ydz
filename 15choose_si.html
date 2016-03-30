@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<!--网页页面字符集-->
 		<meta charset="UTF-8">
@@ -23,6 +22,18 @@
 			ul li{
 				margin: 0.4rem auto;
 			}
+			.checked{
+				background-image: url(img/u2.png); 
+				background-size: 100%;
+				width: 2rem;
+				height: 2rem;
+			}
+			.unckecked{
+				background-image: url(img/u48.png); 
+				background-size: 100%;
+				width: 2rem;
+				height: 2rem;
+			}
 		</style>
 	</head>
 
@@ -34,7 +45,7 @@
 					<a c-widget="item;caption:易对账" class="header" style="padding-right: 0px;"></a>
 					<a c-widget="item;caption:服务热线@186-2161-9311" style="color: #9d9d9d;font-size: 16px"></a>
 					<div class="right menu">
-						<a c-widget="item; caption:登陆"></a>
+						<a c-widget="item; caption:登陆" href="index.html"></a>
 					</div>
 				</div>
 			</div>
@@ -45,7 +56,8 @@
 		<div style="width: 80%;margin: 1rem auto;">
 			<div class="row" style="border-bottom: 1px solid #CCCCCC;">
 				<div class="medium-1 columns" style="line-height: 3.5rem;">
-					<img src="img/u48.png" style="width: 2rem;height: 2rem;" />
+					<div class="unckecked" onclick="change_check(this);"></div>
+					<!--<img src="img/u48.png" style="width: 2rem;height: 2rem;" />-->
 				</div>
 				<div class="medium-3 columns" style="">
 					<div style="background-color: #4693D0;color: white;font-size: 1.25rem;border-radius: 5px;text-align: center;line-height: 2.5rem;">
@@ -55,10 +67,10 @@
 					<div style="margin: 0.5rem 0rem 1rem;">以普通的广告设计策划为主营业务，业务计价不标准的用户。 系统预置了一些常用的业务类，用户可以直接勾选，省去了重复填写的工作量。</div>
 				</div>
 				<div class="medium-7 columns">
-					<ul>(单选)</ul>
-					<ul><input type="radio" />自己不加工</ul>
-					<ul><input type="radio" />自用加工</ul>
-					<ul><input type="radio" />少量对外加工</ul>
+					<ul style="padding: 0rem;">(单选)</ul>
+					<ul style="padding: 0rem;"><input type="radio" />自己不加工</ul>
+					<ul style="padding: 0rem;"><input type="radio" />自用加工</ul>
+					<ul style="padding: 0rem;"><input type="radio" />少量对外加工</ul>
 				</div>
 			</div>
 			<!--s-->
@@ -75,7 +87,7 @@
 					<div style="margin: 0.5rem auto;">可以方便地管理到每笔广告合同的起始期间及到期提醒、收款记录及收款提醒、广告资源位的占用与空缺以及各类统计分析</div>
 				</div>
 				<div class="medium-7 columns">
-					<ul style="text-align: left;">（多选，至少一个）</ul>
+					<ul style="padding: 0rem;">（多选，至少一个）</ul>
 					<ul class="medium-block-grid-4">
 						<li><input type="checkbox" />公交车</li>
 						<li><input type="checkbox" />出租车</li>
@@ -117,7 +129,7 @@
 					<div style="margin: 0.5rem 0rem 1rem;">专业的数码快印公司。</div>
 				</div>
 				<div class="medium-7 columns">
-					<ul>(单选)</ul>
+					<ul style="padding: 0rem;">(单选)</ul>
 					<ul class="medium-block-grid-4">
 						<li><input type="radio" />单店</li>
 						<li><input type="radio" />连锁店</li>
@@ -138,7 +150,7 @@
 					<div style="margin: 1rem auto;">以对外加工为主，订单量比较大，计价标准的用户。系统支持读取文件名（类似上传邮件附件）并自动对应表单里的相关数据（如长宽数量等）。极大减少订单录入是工作量，助您轻松开单。</div>
 				</div>
 				<div class="medium-7 columns">
-					<ul style="margin-top: 3.5rem;">（多选，至少一个）</ul>
+					<ul style="margin-top: 3.5rem;padding: 0;">（多选，至少一个）</ul>
 					<ul class="medium-block-grid-3 large-block-grid-6">
 						<li><input type="checkbox" />写真</li>
 						<li><input type="checkbox" />喷绘</li>
@@ -163,7 +175,7 @@
 					<div style="margin: 0.5rem 0rem 1rem;">以对外加工CTP输出为主，订单量较大，计价标准的用户。极大减少订单录入是工作量，助您轻松开单。</div>
 				</div>
 				<div class="medium-7 columns">
-					<ul>(单选)</ul>
+					<ul style="padding: 0rem;">(单选)</ul>
 					<ul class="medium-block-grid-4">
 						<li><input type="radio" />单店</li>
 						<li><input type="radio" />连锁店</li>
@@ -182,6 +194,15 @@
 			</div>
 		</footer>
 		<script type="text/javascript">
+			function change_check(btn){
+				var $btn  = $(btn);
+				var btn_class =	$(btn).getClass();
+				if(btn_class == 'checked'){
+					$btn.addClass("unckecked").removeClass("checkered");
+				}else{
+					$btn.addClass("checkered").removeClass("unckecked");
+				}
+			}
 			cola(function(model) {});
 		</script>
 	</body>

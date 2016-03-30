@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-o 
 	<head>
 		<!--网页页面字符集-->
 		<meta charset="UTF-8">
@@ -183,7 +182,7 @@ o
 			
 			function autoHeight() {
 				var windowHeight = $(window).height();
-				var actualHeight = windowHeight - $("footer").height();
+				var actualHeight = windowHeight - $("footer").height()-$("header").height();
 				$(".home-container").height(actualHeight);
 				
 			};

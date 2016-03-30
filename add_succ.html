@@ -18,6 +18,8 @@
 		<script type="text/javascript" src="js/semantic.js"></script>
 		<script type="text/javascript" src="js/cola.js"></script>
 		<script type="text/javascript" src="js/i18n/zh-Hans/cola.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<script type="text/javascript" src="js/public.js"></script>
 		<!-- document 内部样式定义区域-->
 		<style>
 			@media only screen and (max-width: 48.0625em) {
@@ -63,27 +65,29 @@
 	<body>
 		<!--头部 s-->
 		<header>
-			<div style="background: #1B1C1D;padding: 0px 4rem;">
-				<div c-widget="menu;class:inverted borderless container" style="border-radius: 0rem;height: 4rem;">
-					<a c-widget="item;caption:易对账" class="header" style="padding-right: 0px;"></a>
-					<a c-widget="item;caption:服务热线@186-2161-9311" style="color: #9d9d9d;font-size: 16px"></a>
-					<div class="right menu">
-						<a c-widget="item; caption:登陆" href="index.html"></a>
-					</div>
+			<div class="head_bg">
+				<!--c-widget="menu;class:inverted borderless container"-->
+				<div class="menu_body common_width">
+					<div class="menu_zdy" onclick="jump()">易对账</div>
+					<div class="menu_phone">服务热线@186-2161-9311</div>
+					<div class="menu_login">登录</div>
 				</div>
 			</div>
 		</header>
-		<!--头部 e-->
-		<div c-widget="segment; class:tertiary;" style="margin:3rem auto;width: 80%;"> 申请成功 ! 我们已经通知管理员尽快审，审核结果将会以短信通知的方式告知，请注意查阅短信。</div>
+		<!--头部 end-->
+		<div class="home-container">
+		<div c-widget="segment; class:tertiary;" class="common_width mian_msg"> 申请成功 ! 我们已经通知管理员尽快审，审核结果将会以短信通知的方式告知，请注意查阅短信。</div>
 
-		<div style="width: 80%;margin: 1rem auto;">
+		<div style="margin: 1rem auto;" class="common_width>
 					<div c-widget="button; class:blue" style="width: 20%;">提交</div>
 		</div>
-
-		
-		<footer style="margin-top: 3em;">
+		</div>
+		<footer>
 			<div c-widget="segment; class:secondary;" style="text-align: center;">
-				<div style="width: 80%;">@2016 上海仁石科技有限公司 / All Rights Reserved 沪 ICP备16005067 <span style="float: right; margin-left: 2rem;">关于我们   帮助中心  加入我们</span></div>
+				<div class="row">
+					<div class="medium-12 large-5  large-offset-1 columns">@2016 上海仁石科技有限公司 / All Rights Reserved 沪 ICP备16005067 </div>
+					<div class="medium-12 large-2  large-offset-2 end columns">关于我们&nbsp;&nbsp;帮助中心&nbsp;&nbsp;加入我们</div>
+				</div>
 			</div>
 		</footer>
 		<script type="text/javascript">
@@ -91,6 +95,11 @@
 			cola(function(model) {
 	
 			});
+			function autoHeight() {
+				var windowHeight = $(window).height();
+				var actualHeight = windowHeight - $("footer").height() - $("header").height()-42;
+				$(".home-container").height(actualHeight);
+			};
 		</script>
 	</body>
 

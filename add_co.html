@@ -18,80 +18,52 @@
 		<script type="text/javascript" src="js/semantic.js"></script>
 		<script type="text/javascript" src="js/cola.js"></script>
 		<script type="text/javascript" src="js/i18n/zh-Hans/cola.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>		
+		<script type="text/javascript" src="js/public.js"></script>
 		<!-- document 内部样式定义区域-->
 		<style>
-			@media only screen and (max-width: 48.0625em) {
-				.small-hide {
-					display: none;
-				}
-			}
-			
-			.select_co {
-				border: 1px solid #0099CC;
-				background: #0099CC;
-				color: white;
-				margin: 0;
-				display: inline-block;
-				width: 22rem;
-				height: 3rem;
-				line-height: 3rem;
-				text-align: center;
-				cursor: pointer;
-			}
-			
-			.unselect_co {
-				border: 1px solid gray;
-				background: white;
-				color: #616161;
-				margin: 0;
-				display: inline-block;
-				width: 22rem;
-				height: 3rem;
-				line-height: 3rem;
-				text-align: center;
-				cursor: pointer;
-			}
-			
+			/*
 			.li {
 				background: yellow;
 				border: 1px solid red;
 				display: inline-block;
-			}
+			}*/
 		</style>
 	</head>
 
 	<body>
 		<!--头部 s-->
 		<header>
-			<div style="background: #1B1C1D;padding: 0px 4rem;">
-				<div c-widget="menu;class:inverted borderless container" style="border-radius: 0rem;height: 4rem;">
-					<a c-widget="item;caption:易对账" class="header" style="padding-right: 0px;"></a>
-					<a c-widget="item;caption:服务热线@186-2161-9311" style="color: #9d9d9d;font-size: 16px"></a>
-					<div class="right menu">
-						<a c-widget="item; caption:登陆" href="index.html"></a>
-					</div>
+			<div class="head_bg">
+				<!--c-widget="menu;class:inverted borderless container"-->
+				<div class="menu_body common_width">
+					<div class="menu_zdy" onclick="jump()">易对账</div>
+					<div class="menu_phone">服务热线@186-2161-9311</div>
+					<div class="menu_login">登录</div>
 				</div>
 			</div>
 		</header>
-		<!--头部 e-->
-		<div c-widget="segment; class:tertiary;" style="margin:3rem auto;width: 80%;">请选择 创建一家新企业 或 加入一家已创建的企业</div>
+		<!--头部 end-->
+		
+		<div class="home-container">
+		<div c-widget="segment; class:tertiary;" class="common_width mian_msg">请选择 创建一家新企业 或 加入一家已创建的企业</div>
 
-		<div style="margin:4rem auto 2rem;width: 80%;">
+		<div style="margin:4rem auto 2rem;" class="common_width">
 			<span class="select_co" onclick="change_new(this)" style="">创建新企业</span><span onclick="change_add(this)" class="unselect_co" style="display: inline-block;width: 22rem;height: 3rem;line-height: 3rem;text-align: center;">加入已创建的企业</span>
 		</div>
-		<div style="margin:0rem auto;width: 80%;">
+		<div style="margin:0rem auto;" class="common_width">
 			每个企业只需创建一次，创建成功后，您将成为管理员。建议由公司老板或合伙人来创建公司。管理员权限可以被转让。
 		</div>
 
 		<!--<div  class="h-box" style="margin:4rem auto;width: 80%;">-->
 		<!--创建公司 start-->
-		<div class="row" id="create" style="width: 80%;margin-top: 2rem;">
+		<div class="row common_width" id="create" style="margin-top: 2rem;">
 			<div class="ui form">
 				<div class="fields">
 					<div style="min-width: 90px;">
 						<span style="line-height: 2.5rem;">企业全称<span style="color: red;font-size: 18px;vertical-align: top;">*</span></span>
 					</div>
-					<div class="field nine wide">
+					<div class="field eight wide">
 						<div c-widget="Input;placeholder:填写营业执照上的公司全称（在未来进行在线支付设置时要用到企业实名认证）"></div>
 					</div>
 				</div>
@@ -99,7 +71,7 @@
 					<div style="min-width: 90px;">
 						<span style="line-height: 2.5rem;">企业简称<span style="color: red;font-size: 18px;vertical-align: top;">*</span></span>
 					</div>
-					<div class="field nine wide">
+					<div class="field eight wide">
 						<div c-widget="Input;placeholder:请填写对外的公司简称 （3-6个字为宜，如：易对账/易对账科技）"></div>
 					</div>
 				</div>
@@ -107,7 +79,7 @@
 					<div style="min-width: 90px;">
 						<span style="line-height: 2.5rem;">企业区域</span>
 					</div>
-					<div class="field nine wide">
+					<div class="field eight wide">
 						<div id="province" class="field five wide"></div><div id="city" class="field five wide"></div><div id="county" class="field six wide"></div>
 					</div>
 				</div>
@@ -148,13 +120,13 @@
 		</div>
 		<!--创建公司 end-->
 		<!--加入公司 start--->
-		<div class="row" id="add" style="width: 80%;margin-top: 2rem;display: none;">
+		<div class="row common_width" id="add" style="margin-top: 2rem;display: none;">
 			<div class="ui form">
 				<div class="fields">
 					<div style="min-width: 90px;">
 						<span style="line-height: 2.5rem;">邀请码<span style="color: red;font-size: 18px;vertical-align: top;">*</span></span>
 					</div>
-					<div class="field nine wide">
+					<div class="field eight wide">
 						<div c-widget="Input;placeholder:请输入你要加入的企业的6位数字字母组合的企业代码（询问企业账户管理员）"></div>
 					</div>
 				</div>
@@ -162,7 +134,7 @@
 					<div style="min-width: 90px;">
 						<span style="line-height: 2.5rem;">企业代码<span style="color: red;font-size: 18px;vertical-align: top;">*</span></span>
 					</div>
-					<div class="field nine wide">
+					<div class="field eight wide">
 						<div c-widget="Input;placeholder:请输入你要加入的企业的6位数字字母组合的企业代码（询问企业账户管理员）"></div>
 					</div>
 				</div>
@@ -170,19 +142,24 @@
 					<div style="min-width: 90px;">
 						<span style="line-height: 2.5rem;">真实姓名</span>
 					</div>
-					<div class="field nine wide">
+					<div class="field eight wide">
 						<div c-widget="Input;"></div>
 					</div>
 				</div>
-				<a c-widget="button; class:blue" style="width: 20%;" >提交</a>
+				<a c-widget="button; class:blue" style="width: 20%;" href="add_succ.html" >提交</a>
 			</div>
 		</div>
 		<!--加入公司 end--->
-		<footer style="margin-top: 3em;">
+		</div>
+		<footer>
 			<div c-widget="segment; class:secondary;" style="text-align: center;">
-				<div style="width: 80%;">@2016 上海仁石科技有限公司 / All Rights Reserved 沪 ICP备16005067 <span style="float: right; margin-left: 2rem;">关于我们   帮助中心  加入我们</span></div>
+				<div class="row">
+					<div class="medium-12 large-5  large-offset-1 columns">@2016 上海仁石科技有限公司 / All Rights Reserved 沪 ICP备16005067 </div>
+					<div class="medium-12 large-2  large-offset-2 end columns">关于我们&nbsp;&nbsp;帮助中心&nbsp;&nbsp;加入我们</div>
+				</div>
 			</div>
 		</footer>
+		
 		<script type="text/javascript">
 			function change_new(d){
 				$(".select_co").removeClass("select_co").addClass("unselect_co");
@@ -244,6 +221,11 @@
 					}
 				});
 			});
+			function autoHeight() {
+				var windowHeight = $(window).height();
+				var actualHeight = windowHeight - $("footer").height() - $("header").height()-42;
+				$(".home-container").height(actualHeight);
+			};
 		</script>
 	</body>
 

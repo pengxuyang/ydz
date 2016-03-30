@@ -1,0 +1,98 @@
+.login_input {
+	margin-bottom: 2rem !important;
+}
+
+@media only screen and (max-width: 48.0625em) {
+	.small-hide {
+		display: none;
+	}
+}
+
+.head_bg {
+	background: #1B1C1D;
+}
+
+@media only screen and (max-width: 48.0625em) {
+	.small-hide {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	.common_width {
+		width: 1350px;
+	}
+}
+
+@media only screen and (max-width: 1440px) {
+	.common_width {
+		width: 80%;
+	}
+}
+
+.menu_body {
+	height: 4rem;
+	margin: auto;
+}
+
+.menu_zdy {
+	font-size: 1.35rem;
+	color: white;
+	display: inline-block;
+	line-height: 4rem;
+	cursor: pointer;
+}
+
+.menu_phone {
+	font-size: 1.15rem;
+	color: #9D9D9D;
+	display: inline-block;
+	line-height: 4rem;
+	margin-left: 1rem;
+}
+
+.menu_login {
+	float: right;
+	color: white;
+	line-height: 4rem;
+	cursor: pointer;
+}
+
+.mian_msg {
+	margin: 3rem auto !important;
+	padding: 0.5rem !important;
+}
+
+.wechat_scan_msg {
+	margin: 5rem auto;
+	color: #666666;
+	font-size: 1.5rem;
+	"
+
+}
+
+.select_co {
+	border: 1px solid #0099CC;
+	background: #0099CC;
+	color: white;
+	margin: 0;
+	display: inline-block;
+	width: 22rem;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+	cursor: pointer;
+}
+
+.unselect_co {
+	border: 1px solid gray;
+	background: white;
+	color: #616161;
+	margin: 0;
+	display: inline-block;
+	width: 22rem;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+	cursor: pointer;
+}

@@ -18,10 +18,26 @@
 		<script type="text/javascript" src="js/semantic.js"></script>
 		<script type="text/javascript" src="js/cola.js"></script>
 		<script type="text/javascript" src="js/i18n/zh-Hans/cola.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<script type="text/javascript" src="js/public.js"></script>
 		<!-- document 内部样式定义区域-->
 		<style>
-			li {
-				margin: 1rem auto;
+			@media only screen and (min-width: 1440px) {
+				li {
+					margin: 2rem auto;
+				}
+				.ch_li_top{
+					margin-top: 2rem;
+				}
+			}
+			
+			@media only screen and (max-width: 1440px) {
+				li {
+					margin: 1rem auto;
+				}
+				.ch_li_top{
+					margin-top: 1rem;
+				}
 			}
 		</style>
 	</head>
@@ -29,30 +45,30 @@
 	<body>
 		<!--头部 s-->
 		<header>
-			<div style="background: #1B1C1D;padding: 0px 4rem;">
-				<div c-widget="menu;class:inverted borderless container" style="border-radius: 0rem;height: 4rem;">
-					<a c-widget="item;caption:易对账" class="header" style="padding-right: 0px;"></a>
-					<a c-widget="item;caption:服务热线@186-2161-9311" style="color: #9d9d9d;font-size: 16px"></a>
-					<div class="right menu">
-						<a c-widget="item; caption:登陆" href="index.html"></a>
-					</div>
+			<div class="head_bg">
+				<!--c-widget="menu;class:inverted borderless container"-->
+				<div class="menu_body common_width">
+					<div class="menu_zdy" onclick="jump()">易对账</div>
+					<div class="menu_phone">服务热线@186-2161-9311</div>
+					<div class="menu_login">登录</div>
 				</div>
 			</div>
 		</header>
-		<!--头部 e-->
-		<div c-widget="segment; class:tertiary;" style="margin:3rem auto;width: 80%;"> 请仔细选择相应的大行业，我们会提供更加行业化和个性化的与服务！</div>
+		<!--头部 end-->
+		<div class="home-container">
+		<div c-widget="segment; class:tertiary;" style="margin:3rem auto;"class="common_width"> 请仔细选择相应的大行业，我们会提供更加行业化和个性化的与服务！</div>
 
-		<div style="width: 80%;margin: 1rem auto;">
+		<div style="margin: 1rem auto;" class="common_width">
 			<div>
 				<!--第一行 start-->
 				<div class="row">
 					<div class="medium-1 columns" style="line-height: 3.5rem;">
 						<img src="img/u2.png" style="width: 2rem;height: 2rem;" />
 					</div>
-					<div class="medium-11 columns" style="">
+					<div class="medium-11 columns end" style="">
 						<div class="row">
-							<div class="medium-2 column" style="background-color:#0099CC ;color: white;height: 3rem;line-height: 3rem;text-align: center;">泛广告印刷行业</div>
-							<div class="medium-10 column" style="background-color:#18BC9C ;color: white;height: 3rem;line-height: 3rem;">（包括但不限于广告、传媒、印刷、包装、字牌雕刻等行业上下游从事设计/制作/产品销售/制造/租赁等服务的企业）</div>
+							<div class="large-2 column" style="background-color:#0099CC ;color: white;height: 3rem;line-height: 3rem;text-align: center;">泛广告印刷行业</div>
+							<div class="large-10 xlarge-8 columns end" style="background-color:#18BC9C ;color: white;height: 3rem;line-height: 3rem;">（包括但不限于广告、传媒、印刷、包装、字牌雕刻等行业上下游从事设计/制作/产品销售/制造/租赁等服务的企业）</div>
 						</div>
 					</div>
 				</div>
@@ -61,7 +77,7 @@
 				<div class="row">
 					<div class="medium-1 columns"></div>
 					<div class="medium-11 columns">
-						<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
+						<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6 xlarge-block-grid-5">
 							<li>广告设计</li>
 							<li>媒体代理</li>
 							<li>喷绘写真</li>
@@ -83,7 +99,7 @@
 				<!--列表模块 end-->
 			</div>
 
-			<div>
+			<div class="ch_li_top">
 				<!--第一行 start-->
 				<div class="row">
 					<div class="medium-1 columns" style="line-height: 3.5rem;">
@@ -91,8 +107,8 @@
 					</div>
 					<div class="medium-11 columns" style="">
 						<div class="row">
-							<div class="medium-2 column" style="background-color:#0099CC ;color: white;height: 3rem;line-height: 3rem;text-align: center;">其它行业</div>
-							<div class="medium-10 column" style="background-color:#18BC9C ;color: white;height: 3rem;line-height: 3rem;">（非广告印刷相关行业）</div>
+							<div class="large-2 column" style="background-color:#0099CC ;color: white;height: 3rem;line-height: 3rem;text-align: center;">其它行业</div>
+							<div class="large-10 xlarge-8 columns end" style="background-color:#18BC9C ;color: white;height: 3rem;line-height: 3rem;">（非广告印刷相关行业）</div>
 						</div>
 					</div>
 				</div>
@@ -101,7 +117,7 @@
 				<div class="row">
 					<div class="medium-1 columns"></div>
 					<div class="medium-11 columns">
-						<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
+						<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6 xlarge-block-grid-5">
 							<li>数码3C类</li>
 							<li>家用电器</li>
 							<li>五金建材</li>
@@ -119,17 +135,25 @@
 			</div>
 		</div>
 
-		<div style="width: 80%;margin: 1rem auto;">
+		<div style="margin: 1rem auto;" class="common_width">
 			<a c-widget="button; class:blue" style="width: 20%;" href="15choose_si.html">提交</a>
 		</div>
-
-		<footer style="margin-top: 3em;">
+		</div>
+		<footer>
 			<div c-widget="segment; class:secondary;" style="text-align: center;">
-				<div style="width: 80%;">@2016 上海仁石科技有限公司 / All Rights Reserved 沪 ICP备16005067 <span style="float: right; margin-left: 2rem;">关于我们   帮助中心  加入我们</span></div>
+				<div class="row">
+					<div class="medium-12 large-5  large-offset-1 columns">@2016 上海仁石科技有限公司 / All Rights Reserved 沪 ICP备16005067 </div>
+					<div class="medium-12 large-2  large-offset-2 end columns">关于我们&nbsp;&nbsp;帮助中心&nbsp;&nbsp;加入我们</div>
+				</div>
 			</div>
 		</footer>
 		<script type="text/javascript">
 			cola(function(model) {});
+			function autoHeight() {
+				var windowHeight = $(window).height();
+				var actualHeight = windowHeight - $("footer").height() - $("header").height()-42;
+				$(".home-container").height(actualHeight);
+			};
 		</script>
 	</body>
 

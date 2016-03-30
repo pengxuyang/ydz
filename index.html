@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<!--网页页面字符集-->
 		<meta charset="UTF-8">
@@ -12,82 +13,19 @@
 		<!-- css引入和样式定义区域 -->
 		<link rel="stylesheet" type="text/css" href="css/semantic.css">
 		<link rel="stylesheet" type="text/css" href="css/cola.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
 		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
 		<script type="text/javascript" src="js/3rd.js"></script>
 		<script type="text/javascript" src="js/semantic.js"></script>
 		<script type="text/javascript" src="js/cola.js"></script>
 		<script type="text/javascript" src="js/i18n/zh-Hans/cola.js"></script>
+		<!--加载公共js-->
+		<script type="text/javascript" src="js/public.js"></script>
 		<!-- document 内部样式定义区域-->
-		<style>
-			.login_input {
-				margin-bottom: 2rem !important;
-			}
-			
-			@media only screen and (max-width: 48.0625em) {
-				.small-hide {
-					display: none;
-				}
-			}
-			
-			.head_bg {
-				background: #1B1C1D;
-			}
-			
-			@media only screen and (max-width: 48.0625em) {
-				.small-hide {
-					display: none;
-				}
-			}
-			
-			@media only screen and (min-width: 1440px) {
-				.common_width {
-					width: 1350px;
-				}
-			}
-			
-			@media only screen and (max-width: 1440px) {
-				.common_width {
-					width: 80%;
-				}
-			}
-			
-			.menu_body {
-				height: 4rem;
-				margin: auto;
-			}
-			
-			.menu_zdy {
-				font-size: 1.35rem;
-				color: white;
-				display: inline-block;
-				line-height: 4rem;
-				cursor: pointer;
-			}
-			
-			.menu_phone {
-				font-size: 1.15rem;
-				color: #9D9D9D;
-				display: inline-block;
-				line-height: 4rem;
-				margin-left: 1rem;
-			}
-			
-			.menu_login {
-				float: right;
-				color: white;
-				line-height: 4rem;
-				cursor: pointer;
-			}
-			
-			.mian_msg {
-				margin: 3rem auto !important;
-				padding: 0.5rem !important;
-			}
-			
-		</style>
 	</head>
 
 	<body>
+
 		<!--头部 s-->
 		<header>
 			<div class="head_bg">
@@ -96,14 +34,11 @@
 					<div class="menu_zdy" onclick="jump()">易对账</div>
 					<div class="menu_phone">服务热线@186-2161-9311</div>
 					<div class="menu_login">登录</div>
-					<!--<a c-widget="item;caption:易对账" class="header"></a>
-					<a c-widget="item;caption:服务热线@186-2161-9311" style="color: #9d9d9d;font-size: 16px"></a>
-					<div class="right menu"><a c-widget="item; caption:登陆" href="index.html"></a></div>-->
 				</div>
 			</div>
 		</header>
+		<!--头部 end-->
 		<div class="home-container">
-			<!--头部 e-->
 			<div c-widget="segment; class:tertiary;" class="common_width mian_msg">欢迎您注册易对账！请您务必严肃填写和选择，我们会有审核。没有真实需求的朋友请绕道！1000个人喜欢我，不如100个人爱上我！</div>
 			<!---->
 			<!--<div  class="h-box" style="margin:4rem auto;width: 80%;">-->
@@ -173,18 +108,10 @@
 				$("#adImg").css("height", $("#login_model").height() - ($("#form_msg").height() / 2));
 			}
 			
-			$(function() {
-				autoHeight();
-			});
-			window.onresize = function() {
-				autoHeight();
-			};
-			
 			function autoHeight() {
 				var windowHeight = $(window).height();
-				var actualHeight = windowHeight - $("footer").height()-$("header").height();
+				var actualHeight = windowHeight - $("footer").height() - $("header").height()-42;
 				$(".home-container").height(actualHeight);
-				
 			};
 		</script>
 	</body>
